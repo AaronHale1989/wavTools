@@ -1,0 +1,11 @@
+
+<h2>Profile</h2>
+
+<%= @user.username %>
+<hr>
+<% @user.samples.each do |f| %>
+<audio controls>
+  <source src="<%=f.audio.url()%>">
+</audio>
+<hr>
+<% end %>
