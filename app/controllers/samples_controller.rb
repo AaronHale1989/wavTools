@@ -67,6 +67,6 @@ class SamplesController < ApplicationController
       end
 
       def sample_params
-        params.require(:sample).permit(:title, :audio,:user_id, :category)
+        params.require(:sample).permit(:title, :audio,:user_id, :category,:payment)
       end
 end

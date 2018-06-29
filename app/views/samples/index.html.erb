@@ -4,12 +4,17 @@
   <div><strong><%= f.user.username %></strong></div>
   <a href="/samples/<%=f.id %>"><%=f.title %></a>
   <div><%= f.created_at.strftime("%Y-%m-%d")%></div>
+
+  <% if f.payment === "yes" %>
+  <div><a> Pay Here </a></div>
+  <% elsif f.payment === "no" || f.payment === nil %>
   <div><%= link_to "Download", f.audio.url() %></div>
+  <% end %>
+
   <%= link_to like_sample_path(f), method: :put do %>
     Upvote
     <%= f.get_upvotes.size %>
   <% end %>
-
   <%= link_to dislike_sample_path(f), method: :put do %>
     Downvote
     <%= f.get_downvotes.size %>

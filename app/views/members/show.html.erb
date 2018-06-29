@@ -1,9 +1,8 @@
-
 <h2>Profile</h2>
 
-<%= @user.username %>
+<%= @person.username %>
 <hr>
-<% @user.samples.each do |f| %>
+<% @person.samples.each do |f| %>
 <audio controls>
   <source src="<%=f.audio.url()%>">
 </audio>

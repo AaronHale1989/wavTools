@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/guitars" => "guitars#index"
   get "/synths" => "synths#index"
   get "/vocals" => "vocals#index"
-  get "/users/:id" => "users#show"
+  get "/members/:id" => "members#show"
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :samples do
