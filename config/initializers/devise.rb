@@ -20,6 +20,12 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   config.authentication_keys = [ :email ]
+  
+  config.omniauth :stripe_connect,
+   ENV['STRIPE_CONNECT_CLIENT_ID'],
+   ENV['STRIPE_SECRET_KEY'],
+   :scope => 'read_write',
+   :stripe_landing => 'register'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

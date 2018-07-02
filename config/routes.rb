@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get "/synths" => "synths#index"
   get "/vocals" => "vocals#index"
   get "/members/:id" => "members#show"
-  devise_for :users, :controllers => {:registrations => "registrations"}
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :samples do
     member do
