@@ -3,17 +3,19 @@
 <% @samples.each do |f| %>
 <div><strong><%= f.user.username %></strong></div>
  <%= f.title %>
+ <div>
  <audio controls controlsList="nodownload">
    <source src="<%=f.audio.url()%>">
  </audio>
+</div>
  <div><%= link_to "Download", f.audio.url() %></div>
  <%= link_to like_sample_path(f), method: :put do %>
-   Upvote
+   <i class="glyphicon glyphicon-thumbs-up"></i>
    <%= f.get_upvotes.size %>
  <% end %>
 
  <%= link_to dislike_sample_path(f), method: :put do %>
-   Downvote
+   <i class="glyphicon glyphicon-thumbs-down"></i>
    <%= f.get_downvotes.size %>
  <% end %>
 <% end %>
