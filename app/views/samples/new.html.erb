@@ -13,10 +13,6 @@
     <%= f.label :audio %>
     <%= f.file_field :audio,:multiple => true %>
   </div>
-  <div>
-    <%= f.label "Paid Sample" %> <br/>
-    <%= f.select :payment, ["yes", "no"] %>
-  </div>
   <div id="dropdownForm">
     <%= f.select :category, ['drums', 'synths', "vocals", "guitars", "bass", "effects"] %>
   </div>
