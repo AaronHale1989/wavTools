@@ -6,6 +6,8 @@ ruby '2.4.1'
   gem 'omniauth-stripe-connect'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
+gem "stripe"
+gem "stripe_event"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'haml-rails', '>= 0.3.4', :group => :development

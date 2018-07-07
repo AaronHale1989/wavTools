@@ -42,7 +42,7 @@ class SamplesController < ApplicationController
     def update
 
        respond_to do |format|
-         if @sample.update(music_params)
+         if @sample.update(sample_params)
            format.html { redirect_to @sample, notice: 'Sample was successfully updated.' }
            format.json { render :show, status: :ok, location: @sample }
          else
