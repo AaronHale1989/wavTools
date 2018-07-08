@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @paid.description %>
+  <audio controls controlsList="nodownload">
+    <source src="<%=@paid.audio.url()%>">
+  </audio>
+</p>
+
+<%= link_to "Purchase Subscription", new_charge_path(:paid_id => @paid.id) %>
+<%= link_to 'Back', paids_path %>
