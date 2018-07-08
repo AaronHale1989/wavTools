@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_06_173123) do
+ActiveRecord::Schema.define(version: 2018_07_08_214208) do
 
   create_table "paids", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2018_07_06_173123) do
     t.datetime "updated_at", null: false
     t.string "audio"
     t.string "category"
+    t.string "stripe_user_id"
+    t.string "stripe_account_type"
   end
 
   create_table "samples", force: :cascade do |t|

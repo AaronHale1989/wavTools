@@ -12,7 +12,7 @@ class PaidsController < ApplicationController
   end
 
   def index
-    @paids = Paid.where(:user_id => current_user.id)
+    @paid = Paid.where(stripe_user_id.last)
   end
 
   def new
@@ -22,6 +22,9 @@ class PaidsController < ApplicationController
   def create
     @paid = Paid.new(paid_params)
     @paid.user_id = current_user.id
+    @paid.stripe_user_id = current_user.stripe_user_id
+    @paid.stripe_account_type = current_user.stripe_account_type
+    puts @stripe
     respond_to do |format|
       if @paid.save
         format.html { redirect_to @paid, notice: 'Sample was successfully created.' }
@@ -67,6 +70,6 @@ class PaidsController < ApplicationController
     end
 
     def paid_params
-      params.require(:paid).permit(:description, :audio,:user_id,:category)
+      params.require(:paid).permit(:description, :audio,:user_id,:category,:stripe_user_id,:stripe_account_type)
     end
 end

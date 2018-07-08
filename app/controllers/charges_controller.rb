@@ -12,12 +12,14 @@ def create
     :source  => params[:stripeToken]
   )
 
-  charge = Stripe::Charge.create(
+  @charge = Stripe::Charge.create(
     :customer    => customer.id,
     :amount      => @amount,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
+    
   )
+
 
 
 rescue Stripe::CardError => e
