@@ -1,0 +1,7 @@
+<h2>Downloads</h2>
+
+<% @paids.each do |f| %>
+  <%= f.user.username %>
+  <%= f.description %>
+  <%= link_to "Download", f.audio.url() %>
+<% end %>

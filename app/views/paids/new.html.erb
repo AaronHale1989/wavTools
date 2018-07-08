@@ -1,0 +1,20 @@
+<h2>Post Sample</h2>
+
+
+
+<%= form_for @paid do |f| %>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :audio %>
+    <%= f.file_field :audio %>
+  </div>
+  <div id="dropdownForm">
+    <%= f.select :category, ['drums', 'synths', "vocals", "guitars", "bass", "effects"] %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

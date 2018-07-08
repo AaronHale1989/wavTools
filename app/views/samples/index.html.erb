@@ -1,18 +1,25 @@
-<h2>Most Recent Samples</h2>
+<div class="row">
+    <div class="col-m-2 col-md-offset-4">
+        <h2>Most Recent Samples</h2>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-m-2 col-md-offset-5">
 <% @samples.each do |f| %>
   <div><strong><%= f.user.username %></strong></div>
   <a href="/samples/<%=f.id %>"><%=f.title %></a>
   <div><%= f.created_at.strftime("%Y-%m-%d")%></div>
   <div><%= link_to "Download", f.audio.url() %></div>
   <%= link_to like_sample_path(f), method: :put do %>
-    Upvote
+    <i class="glyphicon glyphicon-thumbs-up"></i>
     <%= f.get_upvotes.size %>
   <% end %>
-
   <%= link_to dislike_sample_path(f), method: :put do %>
-    Downvote
+    <i class="glyphicon glyphicon-thumbs-down"></i>
     <%= f.get_downvotes.size %>
   <% end %>
   <hr>
 <% end %>
+  </div>
+</div>
