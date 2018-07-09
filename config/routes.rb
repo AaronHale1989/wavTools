@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
 
+
 get "settings/payment-info/users/auth/stripe_connect/callback", to:"users#stripe_callback"
 
   devise_for :users, :controllers => {:registrations => "registrations"}
