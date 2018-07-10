@@ -1,7 +1,20 @@
+<div class="profileImage">
+<div id= "paidT" class="col-m-2 col-md-offset-4">
 <h2>Downloads</h2>
+</div>
 
+<div id="paidDownloads" class="row">
 <% @paids.each do |f| %>
-  <%= f.user.username %>
-  <%= f.description %>
-  <%= link_to "Download", f.audio.url() %>
+  <div id="downloadUser"><%= f.user.username %></div>
+  <div id="downloadDescrip"><%= f.description %></div>
+  <div>
+  <audio class="downloadAudio" controls controlsList="nodownload">
+      <source src="<%=f.audio.url()%>">
+    </audio>
+  </div>
+  <div id="paidButton" class="btn btn-info btn-xs"><%= link_to "Download", f.audio.url() %></div>
+  <hr>
 <% end %>
+</div>
+
+</div>

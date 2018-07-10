@@ -2,10 +2,12 @@ class ChargesController < ApplicationController
 
 def new
   @paid = Paid.find(params[:paid_id])
+  @amount= 500
 end
 
 def create
 @amount= 500
+
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
@@ -17,7 +19,6 @@ def create
     :amount      => @amount,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
-    
   )
 
 

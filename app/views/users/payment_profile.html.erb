@@ -1,2 +1,11 @@
-<h2>Account Balance</h2>
-<h1>$<%= @balance.pending.first["amount"].to_f/100 %></h1>
+<div class="profileImage">
+
+  <div class="profileP">
+      <h2 id="accountS">Account Balance</h2>
+  </div>
+<div class="accountP">
+  <h4> <%=@account.business_url %></h4>
+  <h4 id="balance">$<%= @balance.pending.first["amount"].to_f/100 %></h4>
+</div>
+
+</div>

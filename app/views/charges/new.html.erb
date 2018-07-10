@@ -1,3 +1,10 @@
+<div class="profileImage">
+<div id="subscribeTitle" class="col-m-2 col-md-offset-4">
+    <h2>Subscribe</h2>
+    <h2 id="subPrice">$<%= @amount.to_f/100 %></h2>
+</div>
+
+<div class="subscribeB">
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -5,9 +12,6 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span> <%=@amount%> </span>
-    </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -16,3 +20,5 @@
           data-amount= "<%=@amount %>"
           data-locale="auto"></script>
 <% end %>
+</div>
+</div>

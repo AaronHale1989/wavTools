@@ -12,7 +12,7 @@ class PaidsController < ApplicationController
   end
 
   def index
-    @paid = Paid.where(stripe_user_id.last)
+    @paids = Paid.all
   end
 
   def new
@@ -37,6 +37,7 @@ class PaidsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
