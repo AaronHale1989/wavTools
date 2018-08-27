@@ -21,7 +21,7 @@ class UsersController < ApplicationController
    @user = User.find(current_user.id)
     @account = Stripe::Account.retrieve("#{@user.stripe_user_id.to_s}") if @user.stripe_user_id.present?
     @balance = Stripe::Balance.retrieve() if @user.stripe_user_id.present?
-    @user.update!(stripe_account_type: @account.business_url)
+    @user.update!(stripe_account_type: @account.business_url)if @account.present?
  end
 
 

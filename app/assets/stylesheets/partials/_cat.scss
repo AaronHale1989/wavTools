@@ -9,7 +9,6 @@
 #recentTitle {
   color:white
 
-
 }
 
 #catWrap {
@@ -24,6 +23,18 @@
   position:relative;
   top:40px;
 }
+body {
+  min-height:100%;
+}
+
+html {
+  height:100%;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
 
 .catImage {
   position:relative;
@@ -31,7 +42,9 @@
   margin-top:0px;
   background-image: url("/assets/background2.jpg");
   background-size: 100%;
-  height:1300px;
+  height:2000px;
+  margin-bottom :20px;
+  overflow: hidden;
 }
 
 .sampleImage {
@@ -40,7 +53,7 @@
   margin-top:0px;
   background-image: url("/assets/background2.jpg");
   background-size: 100%;
-  height:7000px;
+  height:100%;
 }
 
 .catLike {
@@ -51,7 +64,6 @@
 #catDownload {
   position:relative;
   left:118px;
-  margin-bottom:10px;
 }
 
 .catUser {
