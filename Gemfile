@@ -11,6 +11,7 @@ gem "stripe_event"
 # Use sqlite3 as the database for Active Record
 gem 'rails_12factor', group: :production
 gem 'pg'
+gem "fog"
 
 gem 'haml-rails', '>= 0.3.4', :group => :development
 # Use Puma as the app server
