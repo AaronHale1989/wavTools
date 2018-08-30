@@ -12,6 +12,7 @@ gem "stripe_event"
 gem 'rails_12factor', group: :production
 gem 'pg'
 gem "fog"
+gem "figaro"
 
 gem 'haml-rails', '>= 0.3.4', :group => :development
 # Use Puma as the app server

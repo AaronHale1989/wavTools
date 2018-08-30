@@ -1,4 +1,4 @@
-require 'carrierwave/orm/activerecord'
+
 if Rails.env.development?
   CarrierWave.configure do |config|
       config.fog_credentials = {
