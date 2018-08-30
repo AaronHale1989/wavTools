@@ -46,11 +46,12 @@
                             <span>Marketplace</span>
                         </a>
                         <ul class="dropdown-menu">
+                          <% if user_signed_in? %>
                           <li> <a href="/marketplaces">Shop Samples</a></li>
-
                             <li> <a href="/members/:id">Create Market Profile</a></li>
                             <li> <a href="/paids/new">Create Paid Sample</a></li>
                             <li> <a href="/users/payment_profile">My Balance</a></li>
+                            <% end %>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -58,8 +59,10 @@
                             <span class="glyphicon glyphicon-cog"></span>
                         </a>
                         <ul class="dropdown-menu">
+                          <% if user_signed_in? %>
                             <li><a href="/members/show">Profile</a></li>
                             <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+                            <% end %>
                         </ul>
                     </li>
                 </ul>

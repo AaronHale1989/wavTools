@@ -10,6 +10,8 @@ gem "stripe"
 gem "stripe_event"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'pg'
+
 gem 'haml-rails', '>= 0.3.4', :group => :development
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

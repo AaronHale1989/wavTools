@@ -4,8 +4,12 @@
       <h2 id="accountS">Account Balance</h2>
   </div>
 <div class="accountP">
-  <h4> <%=@account.business_url %></h4>
+<% if @user.stripe_user_id.present? %>
+  <h4> <%=@account.business_url %> </h4>
   <h4 id="balance">$<%= @balance.pending.first["amount"].to_f/100 %></h4>
+  <% else %>
+  <a id="payP" class="btn btn-info" href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_D9oFSEDOLAMVCAfOedR4GJnhxBQq3BzC&scope=read_write">Set Up Marketplace Account</a>
+  <% end %>
 </div>
 
 </div>
