@@ -1,0 +1,20 @@
+
+<div class="profileImage">
+    <div id="marketSamples" class="row">
+      <div id="paidList"class="col-m-2 col-md-offset-5">
+  <div id= "marketTitle">
+  <strong>Title:</strong>
+</div>
+
+  <div><%= @paid.description %></div>
+<div id="paidAudio">
+<audio controls controlsList="nodownload">
+    <source src="<%=@paid.audio.url()%>">
+  </audio>
+</div>
+
+  <div id= "subscribe"class="btn btn-info btn-xs"><%= link_to "Purchase Subscription", new_charge_path(:paid_id => @paid.id) %></div>
+  <div id="subscribeBack" class="btn btn-info btn-xs"><%= link_to 'Back', paids_path %></div>
+</div>
+</div>
+</div>

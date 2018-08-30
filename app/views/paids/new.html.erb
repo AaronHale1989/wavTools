@@ -1,0 +1,28 @@
+
+<div id="outwrapper">
+  <div id="sign-image" class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="form-content">
+          <h2 class="out" class="text-center">Post Sample</h2>
+          <div class="formWrap">
+<%= bootstrap_form_for @paid do |f| %>
+  <div class="out" class="field">
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.file_field :audio %>
+  </div>
+  <div id="dropdownForm">
+    <%= f.select :category, ['drums', 'synths', "vocals", "guitars", "bass", "effects"] %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

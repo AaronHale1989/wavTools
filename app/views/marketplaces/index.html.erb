@@ -1,0 +1,38 @@
+
+<div class="profileImage">
+<div class="row">
+    <div id= "marketTitle" class="col-m-2 col-md-offset-4">
+        <h2>Marketplace Samples</h2>
+    </div>
+</div>
+
+<div id="marketSamples" class="row">
+    <div id="paidSample"class="col-m-2 col-md-offset-5">
+<% @paids.each do |f| %>
+  <div class="paidUsername"><strong><%= f.user.username %></strong></div>
+  <a id="paidLink"class="btn btn-info btn-xs" href="/paids/<%=f.id %>"><%=f.description %></a>
+
+  <div class="marketAudio">
+  <audio controls controlsList="nodownload">
+    <source src="<%=f.audio.url()%>">
+  </audio>
+</div>
+
+  <div class="paidTime"><%= f.created_at.strftime("%Y-%m-%d")%></div>
+
+<div class="marketLike">
+  <%= link_to like_paid_path(f), method: :put do %>
+    <i class="glyphicon glyphicon-thumbs-up"></i>
+    <%= f.get_upvotes.size %>
+  <% end %>
+  <%= link_to dislike_paid_path(f), method: :put do %>
+    <i class="glyphicon glyphicon-thumbs-down"></i>
+    <%= f.get_downvotes.size %>
+  <% end %>
+</div>
+  <hr>
+<% end %>
+
+    </div>
+  </div>
+</div>

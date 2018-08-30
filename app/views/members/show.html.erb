@@ -1,0 +1,17 @@
+<div class="profileImage">
+<div class="profileP">
+<h2>Profile</h2>
+</div>
+
+<div class="username">Username: <strong><%= @person.username %></strong></div>
+<% @person.samples.each do |f| %>
+<% end %>
+<div class="stripeStuff">
+<% if @person.stripe_user_id.present? %>
+  <%= "Marketplace Account Active" %>
+<% else %>
+       <a class="btn btn-info" href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_D9oFSEDOLAMVCAfOedR4GJnhxBQq3BzC&scope=read_write">Set Up Marketplace Account</a>
+<% end %>
+</div>
+
+</div>

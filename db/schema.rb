@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_29_145259) do
+ActiveRecord::Schema.define(version: 2018_07_08_214208) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "paids", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "price"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "audio"
+    t.string "category"
+    t.string "stripe_user_id"
+    t.string "stripe_account_type"
+  end
 
   create_table "samples", force: :cascade do |t|
     t.string "title"
@@ -19,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_06_29_145259) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "category"
+    t.string "payment"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,11 +51,15 @@ ActiveRecord::Schema.define(version: 2018_06_29_145259) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "publishable_key"
+    t.string "secret_key"
+    t.string "stripe_user_id"
+    t.string "stripe_account_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "votes", force: :cascade do |t|
+  create_table "votes", id: :serial, force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"
     t.string "voter_type"

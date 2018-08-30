@@ -1,12 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="profileImage">
 
-<p>
-  <strong>Title:</strong>
-  <%= @sample.title %>
+<div id="paidShow" class="row">
+  <div class="sampleTitle"><strong>Title:</strong></div>
+  <div id="actualTitle" class="sampleTitle"><%= @sample.title %></div>
+  <div>
   <audio controls controlsList="nodownload">
     <source src="<%=@sample.audio.url()%>">
   </audio>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_sample_path(@sample) %> |
-<%= link_to 'Back', samples_path %>
+<div id="editButton" class="btn btn-info btn-xs"><%= link_to 'Edit', edit_sample_path(@sample) %></div>
+<div id="editBack" class="btn btn-info btn-xs"><%= link_to 'Back', samples_path %></div>
+</div>
+</div>
