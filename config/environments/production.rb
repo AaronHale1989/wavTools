@@ -16,6 +16,7 @@ Rails.application.configure do
   config.serve_static_assets = true
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   config.assets.compile = true
+  config.assets.digest = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
