@@ -11,5 +11,20 @@ if Rails.env.development?
       config.fog_directory = ENV['S3_BUCKET']
       config.fog_public     = true
       config.cache_dir = "#{Rails.root}/tmp/uploads"
+
+      case Rails.env
+  when 'production'
+    config.fog_directory = 'dummy'
+    config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/dummy'
+
+  when 'development'
+    config.fog_directory = 'dev.dummy'
+    config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/dev.dummy'
+
+  when 'test'
+    config.fog_directory = 'test.dummy'
+    config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/test.dummy'
+end
+end
   end
 end
