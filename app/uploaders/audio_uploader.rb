@@ -2,7 +2,9 @@ class AudioUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
   # Choose what kind of storage to use for this uploader:
   if Rails.env.development?
     storage :fog
