@@ -9,6 +9,7 @@ if Rails.env.development?
         :region => "us-east-2",
       }
       config.fog_directory = ENV['S3_BUCKET']
+      config.fog_public     = true
       config.cache_dir = "#{Rails.root}/tmp/uploads"
   end
 end
