@@ -14,16 +14,13 @@ if Rails.env.development?
 
       case Rails.env
   when 'production'
-    config.fog_directory = 'dummy'
-    config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/dummy'
+    config.fog_directory = ENV['S3_BUCKET']
+    config.asset_host = 'https://s3-us-east-1.amazonaws.com/wavtools'
 
   when 'development'
-    config.fog_directory = 'dev.dummy'
-    config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/dev.dummy'
-
-  when 'test'
-    config.fog_directory = 'test.dummy'
-    config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/test.dummy'
+    config.fog_directory = ENV['S3_BUCKET']
+    config.asset_host = 'https://s3-us-east-1.amazonaws.com/wavtools'
     end
+
   end
 end
