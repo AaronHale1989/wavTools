@@ -1,5 +1,4 @@
 require 'fog/aws'
-if Rails.env.development?
   CarrierWave.configure do |config|
     config.fog_provider = 'fog/aws'
       config.fog_credentials = {
@@ -22,6 +21,4 @@ if Rails.env.development?
     config.fog_directory = ENV['S3_BUCKET']
     config.asset_host = 'https://s3-us-east-1.amazonaws.com/wavtools'
     end
-
-  end
 end
