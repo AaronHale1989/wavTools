@@ -11,8 +11,9 @@ gem "stripe_event"
 # Use sqlite3 as the database for Active Record
 gem 'rails_12factor', group: :production
 gem 'pg'
-gem "fog"
+gem 'fog-aws', require: false
 gem "figaro"
+gem 'aws-sdk', '~> 1.36.1'
 
 gem 'haml-rails', '>= 0.3.4', :group => :development
 # Use Puma as the app server
@@ -22,7 +23,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
 gem 'jquery-rails'
 gem 'bootstrap_form'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.0', require: false
 gem 'carrierwave-audio'
 gem 'acts_as_votable', '~> 0.10.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -24,7 +24,7 @@ class SamplesController < ApplicationController
       @sample.user_id = current_user.id
       respond_to do |format|
         if @sample.save
-          format.html { redirect_to @sample, notice: 'Sample was successfully created.' }
+          format.html { redirect_to @sample}
           format.json { render :show, status: :created, location: @sample }
         else
           format.html { render :new }
