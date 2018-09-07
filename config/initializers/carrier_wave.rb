@@ -10,6 +10,7 @@ if Rails.env.development?
       }
       config.fog_directory = ENV['S3_BUCKET']
       config.fog_public     = true
+      config.storage           =  :fog
       config.cache_dir = "#{Rails.root}/tmp/uploads"
 
       case Rails.env
