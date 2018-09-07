@@ -6,7 +6,7 @@ require 'fog/aws'
         :aws_access_key_id => ENV['S3_ACCESS_KEY'],
         :aws_secret_access_key => ENV['S3_SECRET_KEY'],
         :region => "us-east-2",
-        :endpoint => 'https://s3-us-east-1.amazonaws.com'
+        :endpoint => 'https://s3-us-east-2.amazonaws.com'
       }
       config.fog_directory = ENV['S3_BUCKET']
       config.fog_public     = true
@@ -16,10 +16,10 @@ require 'fog/aws'
       case Rails.env
   when 'production'
     config.fog_directory = ENV['S3_BUCKET']
-    config.asset_host = 'https://s3-us-east-1.amazonaws.com/wavtools'
+    config.asset_host = 'https://s3-us-east-2.amazonaws.com/wavtools'
 
   when 'development'
     config.fog_directory = ENV['S3_BUCKET']
-    config.asset_host = 'https://s3-us-east-1.amazonaws.com/wavtools'
+    config.asset_host = 'https://s3-us-east-2.amazonaws.com/wavtools'
     end
 end
