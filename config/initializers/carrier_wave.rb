@@ -24,7 +24,5 @@ if Rails.env.development?
   when 'test'
     config.fog_directory = 'test.dummy'
     config.asset_host = 'https://s3-ap-us-east-1.amazonaws.com/test.dummy'
-end
-end
   end
 end
