@@ -12,7 +12,7 @@ class AudioUploader < CarrierWave::Uploader::Base
   storage :file
 end
   include CarrierWave::Audio
-  # storage :fog
+  storage :fog
   version :mp3 do
   process :convert => [{output_format: :mp3}]
 
