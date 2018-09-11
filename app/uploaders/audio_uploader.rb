@@ -6,7 +6,7 @@ class AudioUploader < CarrierWave::Uploader::Base
     "#{Rails.root}/tmp/uploads"
   end
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.development?
+  if Rails.env.production?
     storage :fog
   else
   storage :file
