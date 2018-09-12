@@ -11,15 +11,11 @@ class AudioUploader < CarrierWave::Uploader::Base
   else
   storage :file
 end
-  include CarrierWave::Audio
-  storage :fog
-  version :mp3 do
-  process :convert => [{output_format: :mp3}]
+
 
   def full_filename(for_file)
     "#{super.chomp(File.extname(super))}.mp3"
   end
-end
 
 
   # Override the directory where uploaded files will be stored.

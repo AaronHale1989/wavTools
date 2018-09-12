@@ -24,7 +24,6 @@ gem 'sass-rails', '>= 3.2'
 gem 'jquery-rails'
 gem 'bootstrap_form'
 gem 'carrierwave', '~> 1.0', require: false
-gem 'carrierwave-audio'
 gem 'acts_as_votable', '~> 0.10.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

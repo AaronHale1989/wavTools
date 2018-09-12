@@ -75,10 +75,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    carrierwave-audio (1.0.8)
-      carrierwave (>= 0.10.0)
-      ruby-sox (>= 0.0.3)
-      soxi-wrapper (>= 0.0.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -238,7 +234,6 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    ruby-sox (0.0.3)
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
@@ -258,7 +253,6 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sexp_processor (4.11.0)
-    soxi-wrapper (0.0.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -313,7 +307,6 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15, < 4.0)
   carrierwave (~> 1.0)
-  carrierwave-audio
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
