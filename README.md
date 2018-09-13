@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WavTools
 
-Things you may want to cover:
+This app is a peer2peer marketplace for trading and selling audio production tools and sounds.
+All payment is run through the stripe api for secure tranfers.
 
-* Ruby version
+To start, create a user and then a marketplace profile to start posting paid samples.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use test card 4242424242424242 when checking out to test out payment structure.
