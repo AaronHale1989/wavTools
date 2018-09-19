@@ -14,6 +14,7 @@ class UsersController < ApplicationController
           @user.update!(stripe_user_id: @resp.params["stripe_user_id"]) if @resp
           @user.update!(stripe_account_type: @resp.params["business_name"]) if @resp
           flash[:notice] = "Your account has been successfully created and is ready to process payments!"
+          redirect_to root_path if @resp
  end
 
 
