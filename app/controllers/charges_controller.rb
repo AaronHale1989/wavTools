@@ -5,7 +5,6 @@ def new
   @amount= 500
 end
 
-# charge call to stripe api
 def create
 @amount= 500
 
